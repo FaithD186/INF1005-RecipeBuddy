@@ -1,0 +1,22 @@
+[
+    { "id": 1, 
+      "name": "Shrimp Seafood Pasta", 
+      "time": "20min", 
+      "ingredients": "Linguine, butter, shrimp, scallops, mussels, clams, shallot, garlic, white wine",
+      "steps": "In a large pot of salted boiling water, cook pasta according to package directions until al dente. Drain noodles but reserve 1 cup of the pasta water. Add pasta and lemon zest and toss to coat. Add seafood. Garnish with parsley and remaining parmesan. Enjoy."
+    
+    },
+    { "id": 2, 
+      "name": "Egg Fried Rice", 
+      "time": "15min", 
+      "ingredients": "Butter, 2 eggs, carrots, onion, peas, garlic, rice, soy sauce.",
+      "steps": "Heat 1/2 tablespoon of butter in a large sauté pan* over medium-high heat until melted. Add egg, and cook until scrambled, stirring occasionally. Remove egg, and transfer to a separate plate."
+    },
+    { "id": 3, 
+      "name": "Chicken and Broccoli Shells and Cheese", 
+      "time": "25min", 
+      "ingredients": "Shell pasta, brocolli, milk, broth, cheddar cheese.",
+      "steps": "Melt butter in a large skillet over medium heat. Add flour and cooking, stirring, for 1 minute. Slowly whisk in milk and chicken broth and season with garlic powder, salt, and pepper. Cook, stirring constantly, until mixture is bubbling and thickened. Remove from heat and add cheddar cheese. Stir until melted."
+    }
+
+  ]
