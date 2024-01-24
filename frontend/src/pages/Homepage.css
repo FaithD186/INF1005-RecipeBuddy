@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section {
+    margin: 5em 10em;
+  }
+.title{
+    text-align: center;
+}
