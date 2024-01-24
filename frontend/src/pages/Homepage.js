@@ -16,10 +16,9 @@ function Homepage() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8000/recipes") // sending request to backend. 
-    // The backend processes the requests and interacts with the MongoDB database.
-      .then(res => res.json() // Data is retrieved and sent back to the frontend...
-      .then(recipes => setRecipes(recipes))); //react 
+    fetch("http://localhost:8000/recipes")
+      .then(res => res.json() 
+      .then(recipes => setRecipes(recipes))); 
   }, []);
 
   function addRecipe(){
@@ -45,7 +44,6 @@ function Homepage() {
       method: "DELETE"
     })
     .then( ()=> {
-    //   setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
     setRecipes((prevRecipes) => {
         const updatedRecipes = prevRecipes
           .filter((recipe) => recipe.id !== id)
@@ -59,7 +57,6 @@ function Homepage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // alert(`Added book ${name}, written by ${author}`)
     const id_to_add = recipes.length + 1
     fetch("http://localhost:8000/addbook",{
       method: "POST",
@@ -96,10 +93,6 @@ function Homepage() {
     console.log(recipes)
 
   }
-
-//   function editRecipe(){
-//     setEditForm(true);
-//   }
 
   function submitEdit(){
     setEditForm(false);
@@ -170,7 +163,6 @@ function Homepage() {
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{recipe.name}</h5>
                 </a>
                 <span class="bg-indigo-100 text-indigo-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Total time: {recipe.time}</span>
-                {/* <p class="italic mb-3 font-normal text-gray-700 dark:text-gray-400">Total time: {recipe.time}</p> */}
                 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
                 {/* <br></br>
                 <br></br> */}
@@ -187,7 +179,7 @@ function Homepage() {
                     Edit Recipe
                 </button>
                 <button onClick={()=> deleteRecipe(recipe.id)} class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    Remove
+                  Remove
                 </button>
             </div>
             <br></br>
