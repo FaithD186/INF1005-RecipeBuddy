@@ -7,9 +7,10 @@ function Homepage() {
   const [recipes, setRecipes] = useState([]);
   const [name, setName] = useState("");
   const [time, setTime] = useState("");
-  const [ingredients, setIngredients] = useState("");
+  const [ingredients, setIngredients] = useState([]);
   const [steps, setSteps] = useState("");
   const [showEditForm, setEditForm] = useState(null);
+  const [unparsedInput, setUnparsedInput] = useState("");
 
   const [showError, setError] = useState(true);
   
@@ -31,7 +32,7 @@ function Homepage() {
     setAddRecipe(true);
     setName('');
     setTime('');
-    setIngredients('');
+    setIngredients([]);
     setSteps('');
   }
 
@@ -55,10 +56,22 @@ function Homepage() {
     })
   }
 
+  // function addIngredients(userinput){
+  //   let ingredientlist = userinput.toString().split(",");
+  //   setIngredients(ingredientlist);
+  // }
+  const parseIngredientsInput = (input) => {
+    // Use a comma as a delimiter to split the input string into an array
+    return input.split(',').map((ingredients) => ingredients.trim());
+    };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIngredients([parseIngredientsInput(unparsedInput)]);
+    console.log(ingredients);
+    // addIngredients(ingredients);
     const id_to_add = recipes.length + 1
-    fetch("http://localhost:8000/addbook",{
+    fetch("http://localhost:8000/addrecipe",{
       method: "POST",
       headers: { "Content-Type": "application/json" },
       mode: "cors",
@@ -73,6 +86,7 @@ function Homepage() {
     
     .then(() => {
       console.log(`Added a new recipe ${name} that takes ${time}`);
+      console.log(ingredients);
       setRecipes((prevRecipes) => [
         ...prevRecipes,
         {
@@ -118,6 +132,7 @@ function Homepage() {
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         type="text"
                         value={name}
+                        placeholder="Type the recipe name"
                         onChange={(e) => setName(e.target.value)} />
                  </label>
 
@@ -130,25 +145,38 @@ function Homepage() {
                     onChange={(e) => setTime(e.target.value)}/>
                 </label>
 
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ingredients
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Ingredients
                     <textarea rows={4} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        value={ingredients}
-                        onChange={(e) => setIngredients(e.target.value)}>
+                        // value={ingredients}
+                        value={Array.isArray(ingredients) ? ingredients.join(', ') : ingredients}
+                        placeholder="Separate ingredients with a comma"
+                        // onChange={(e) => setIngredients(e.target.value)}
+                        // onChange={addIngredients(ingredients)}
+                        onChange={(e) => setIngredients(parseIngredientsInput(e.target.value))}
+                        >   
                     </textarea>
+                    {/* <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                     Separate ingredients with a comma.</p> */}
                 </label>
 
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Steps
-                    <textarea rows={4} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Steps
+                  <textarea rows={4} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         value={steps}
+                        placeholder="How do you make this dish?"
                         onChange={(e) => setSteps(e.target.value)}>
                     </textarea>
                 </label>
           
-                <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={handleSubmit}>Submit</button>
-                <button class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" onClick={cancelSubmit}>Cancel</button>
+                <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={handleSubmit}>
+                  Submit</button>
+                <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" onClick={cancelSubmit}>
+                  Cancel</button>
                 {showError && (
                 <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
-                    <span class="font-medium">Remember to fill in all fields!</span> Ensure all fields are completed before submitting.
+                    <span class="font-medium">Remember to fill in all fields!</span> 
+                    Ensure all fields are completed before submitting.
                 </div>
                 )}
             </div>
@@ -168,8 +196,20 @@ function Homepage() {
                 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
                 {/* <br></br>
                 <br></br> */}
-                <p class="text-lg font-semibold text-blue-600/75 dark:text-blue-500/75">Ingredients</p>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{recipe.ingredients}</p>
+                <p class="text-lg font-semibold text-blue-600/75 dark:text-blue-500/75">
+                  Ingredients
+                </p>
+                <br></br>
+                {recipe.ingredients.map(function(ingredient, index){
+                    return <div class="flex items-center mb-4">
+                    <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                    <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{ingredient}</label>
+                </div>
+                    
+                    ;
+                  })}
+                
+                {/* <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{recipe.ingredients}</p> */}
                 <br></br>
                 <p class="text-lg font-semibold text-blue-600/75 dark:text-blue-500/75">Steps</p>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{recipe.steps}</p>
@@ -208,7 +248,10 @@ function Homepage() {
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ingredients
                             <textarea rows={4} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 value={recipe.ingredients}
-                                onChange={(e) => setIngredients(e.target.value)}>
+                                //onChange={(e) => setIngredients(e.target.value)}
+                                // onChange={(e) => setIngredients(parseIngredientsInput(e.target.value))}
+                                onChange={(e) => setUnparsedInput(e.target.value)}
+                                >
                             </textarea>
                         </label>
 
@@ -224,7 +267,7 @@ function Homepage() {
                             Save Changes
                         </button>
 
-                        <button class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" 
+                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" 
                             onClick={cancelEdit}>
                             Cancel
                         </button>
