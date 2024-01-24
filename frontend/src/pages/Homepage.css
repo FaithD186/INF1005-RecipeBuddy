@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 .section {
-    margin: 5em 10em;
+    margin: 4em 10em;
+  }
+  @media (max-width:1200px){
+    .section {
+      margin: 3em 6em;
+    }
   }
 .title{
     text-align: center;
