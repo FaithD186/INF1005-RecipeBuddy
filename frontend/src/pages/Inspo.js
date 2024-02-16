@@ -75,55 +75,55 @@ function Inspo(){
                     </button>
                 )}
                 {showWebForm && (
-        <div class="w-full max-w-6xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Add a Website&nbsp;&nbsp;🌐 </h5>
-        <form>
-            <br></br>
-            <div class="grid gap-6 mb-6 md:grid-cols-2">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name of website
-                    <input 
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        type="text"
-                        value={websitename}
-                        placeholder="Type the website name"
-                        onChange={(e) => setWebsitename(e.target.value)} />
-                 </label>
+                    <div class="w-full max-w-6xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Add a Website&nbsp;&nbsp;🌐 </h5>
+                    <form>
+                        <br></br>
+                        <div class="grid gap-6 mb-6 md:grid-cols-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name of website
+                        <input 
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="text"
+                            value={websitename}
+                            placeholder="Type the website name"
+                            onChange={(e) => setWebsitename(e.target.value)} />
+                        </label>
 
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Website URL
-                    <input 
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        type="text"
-                        value={websiteurl}
-                        placeholder="Type the website url"
-                        onChange={(e) => setWebsiteurl(e.target.value)} />
-                 </label>
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Website URL
+                        <input 
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="text"
+                            value={websiteurl}
+                            placeholder="Type the website url"
+                            onChange={(e) => setWebsiteurl(e.target.value)} />
+                    </label>
 
-                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Description
-                  <textarea rows={4} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        value={description}
-                        placeholder="A brief description of the website."
-                        onChange={(e) => setDescription(e.target.value)}>
-                    </textarea>
-                </label>
-                {showError && (
-                <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg dark:bg-gray-800 dark:text-blue-400" role="alert">
-                    <span class="font-medium">Remember to fill in all fields! </span> 
-                    Ensure all fields are completed before submitting.
-                </div>
-                )}
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Description
+                        <textarea rows={4} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            value={description}
+                            placeholder="A brief description of the website"
+                            onChange={(e) => setDescription(e.target.value)}>
+                        </textarea>
+                    </label>
+                    {showError && (
+                        <div class="p-4 mb-4 text-sm text-purple-800 rounded-lg dark:bg-gray-800 dark:text-purple-400" role="alert">
+                            <span class="font-medium">Remember to fill in all fields! </span> 
+                            Ensure all fields are completed before submitting.
+                        </div>
+                    )}
           
-                <button type="submit" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={handleSubmitInspo}>
-                  Submit</button>
-                <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" onClick={cancelSubmitInspo}>
-                  Cancel</button>
-            </div>
-        </form>
-      </div>
+                    <button type="submit" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onClick={handleSubmitInspo}>
+                    Submit</button>
+                    <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" onClick={cancelSubmitInspo}>
+                    Cancel</button>
+                </div>
+            </form>
+        </div>
       )}
-                <br></br>
-                <br></br>
-                { websites.map((website) => (
+            <br></br>
+            <br></br>
+            { websites.map((website) => (
                 <div>
                     <div class="max-w-4xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
