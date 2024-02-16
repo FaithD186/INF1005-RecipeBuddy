@@ -7,7 +7,8 @@ RecipeBuddy is a web application built with Express.js, React, Node.js, and styl
 • Browse other online recipes to find inspiration for the next meal.\
 • Intuitive, user friendly interface styled with Tailwind CSS components.\
 
-**Tech Stack**\
+
+**Tech Stack**
 
 • Backend: Built the backend was developed using **Node js** and **Express js**, with APIs to communicate with the frontend.\
 • Frontend: Frontend built using React, Javascript, and styled with Tailwind CSS library.
