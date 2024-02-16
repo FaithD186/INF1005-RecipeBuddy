@@ -11,9 +11,21 @@ app.use(express.json());
 //create a GET routes
 
 const recipes = require('./recipes.json');
+const websites = require('./websites.json');
 
 app.get('/recipes', (req, res) => {
     res.json(recipes);
+});
+app.get('/websites', (req, res) => {
+  res.json(websites);
+});
+
+app.post('/addwebsite', (req, res) => {
+  console.log("Added website")
+  const body = req.body;
+  console.log(body);
+  websites.push(body);
+  res.json({ message: 'The website has been added' });
 });
 
 app.post('/addrecipe', (req, res) => {

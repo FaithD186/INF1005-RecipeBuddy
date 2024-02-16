@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .section {
-    margin: 4em 10em;
+    margin: 7em 10em;
   }
   @media (max-width:1200px){
     .section {
-      margin: 3em 6em;
+      margin: 7em 6em;
     }
   }
 .title{

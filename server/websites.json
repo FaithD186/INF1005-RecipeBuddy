@@ -1,0 +1,24 @@
+[
+    { "name": "Allrecipes",
+    "description": "Find and share everyday cooking inspiration on Allrecipes. Discover recipes, cooks, videos, and how-tos based on the food you love and the friends you follow.",
+    "shorturl": "allrecipies.com",
+    "fullurl": "https://www.allrecipes.com/recipes/"
+    },
+    { "name": "Budget Bytes",
+    "description": "Over 1200 easy and delicious budget-friendly recipes to keep you full and happy! Dinner recipes, slow cooker recipes, vegetarian recipes, breakfast recipes, and more.",
+    "shorturl": "budgetbytes.com",
+    "fullurl": "https://www.budgetbytes.com/category/recipes/"
+    },
+    { "name": "Bon Appétit",
+    "description": "Find the best recipes for breakfast, lunch, and dinner. That means eggs, chicken, pasta, and everything else you can imagine.",
+    "shorturl": "bonappetit.com",
+    "fullurl": "https://www.bonappetit.com/recipes"
+    },
+    { "name": "Simply Recipes",
+    "description": "Simply Recipes is here to help you cook delicious meals with less stress and more joy. We offer recipes and cooking advice for home cooks, by home cooks.",
+    "shorturl": "simplyrecipes.com",
+    "fullurl": "https://www.simplyrecipes.com/"
+    }
+    
+
+]
