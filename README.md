@@ -19,7 +19,7 @@ RecipeBuddy is a web application built with Node.js, Express.js, React, and styl
 <br>
 <br>
 <br>
-<img width="1440" alt="Screen Shot 2024-02-15 at 7 56 31 PM" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/411c8616-d9f8-4cc1-852a-08752c8c1c6e">
+<img width="1440" alt="Screen Shot 2024-02-15 at 9 22 03 PM" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/3afe4ea0-f052-4bc0-b714-6b5ef7cd93e6">
 
 &nbsp;
 &nbsp;
@@ -28,7 +28,7 @@ RecipeBuddy is a web application built with Node.js, Express.js, React, and styl
 <br>
 <br>
 <br>
-<img width="1440" alt="Screen Shot 2024-02-15 at 7 57 14 PM" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/10147626-06e1-4584-a997-3dcb21150ddc">
+<img width="1440" alt="Screen Shot 2024-02-15 at 9 22 20 PM 1" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/10506fd5-cb9b-47b1-a119-2de0c20cb72c">
 
 &nbsp;
 &nbsp;
@@ -37,4 +37,4 @@ RecipeBuddy is a web application built with Node.js, Express.js, React, and styl
 <br>
 <br>
 <br>
-<img width="1440" alt="Screen Shot 2024-02-15 at 7 57 23 PM" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/4e4bfd26-ba64-437d-9f30-41e071979262">
+<img width="1440" alt="Screen Shot 2024-02-15 at 9 22 31 PM" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/1fcfd84d-342e-4913-8354-061e3960248f">
