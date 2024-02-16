@@ -37,4 +37,4 @@ RecipeBuddy is a web application built with Node.js, Express.js, React, and styl
 <br>
 <br>
 <br>
-<img width="1440" alt="Screen Shot 2024-02-15 at 9 22 31 PM" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/1fcfd84d-342e-4913-8354-061e3960248f">
+<img width="1440" alt="Screen Shot 2024-02-15 at 9 26 37 PM" src="https://github.com/FaithD186/INF1005-RecipeBuddy/assets/90401001/4d48b317-71f7-4100-909e-62ef0c0548c3">
