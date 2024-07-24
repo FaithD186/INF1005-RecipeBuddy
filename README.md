@@ -1,4 +1,4 @@
-# INF1005-RecipeBuddy
+# Recipe Buddy
 RecipeBuddy is a web application built with Node.js, Express.js, React, and styled with Tailwind CSS. Users are able to create and view personalized recipes, and store information about their culinary creations including ingredients, time to make, and instructions. Users are also able to find inspiration by exploring other recipes online.
 
 ### **Key Features**
